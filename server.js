@@ -11,7 +11,7 @@ const { check, validationResult } = require('express-validator/check');
 const whitelist = ['http://localhost:3000', 'https://still-castle-84291.herokuapp.com/'];
 
 const corsOptions = {
-  credentials: true,
+  // credentials: true,
   origin: function(origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
       callback(null, true);
@@ -28,7 +28,7 @@ const bookings = require('./controllers/bookings');
 const reviews = require('./controllers/reviews');
 
 const app = express();
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json({ extended: false }));
 app.use(cookieParser());
 
