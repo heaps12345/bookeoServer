@@ -8,7 +8,11 @@ const cookieParser = require('cookie-parser');
 // const stripe = require('stripe')(config.get('stripeSecretKey'));
 const moment = require('moment');
 const { check, validationResult } = require('express-validator/check');
-const whitelist = ['http://localhost:3000', 'https://still-castle-84291.herokuapp.com/'];
+const whitelist = [
+  'http://localhost:3000',
+  'https://still-castle-84291.herokuapp.com/',
+  'https://elated-jennings-679d2d.netlify.com/'
+];
 
 const corsOptions = {
   credentials: true,
