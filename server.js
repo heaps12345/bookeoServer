@@ -53,20 +53,23 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get('/', async (req, res) => {
-  if (req.session.user && req.cookies.user_sid) {
-    try {
-      const user = await db
-        .select('*')
-        .from('users')
-        .where('email', '=', req.session.user);
-
-      res.json(user[0]);
-    } catch (err) {
-      res.status(400).json('unable to get user');
-    }
-  }
+app.get('/', (req, res) => {
+  res.send('it is working');
 });
+// app.get('/', async (req, res) => {
+//   if (req.session.user && req.cookies.user_sid) {
+//     try {
+//       const user = await db
+//         .select('*')
+//         .from('users')
+//         .where('email', '=', req.session.user);
+
+//       res.json(user[0]);
+//     } catch (err) {
+//       res.status(400).json('unable to get user');
+//     }
+//   }
+// });
 
 // app.get('/profile/:id', async (req, res) => {
 //   const profile = await db('users')
