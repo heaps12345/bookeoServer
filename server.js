@@ -28,7 +28,7 @@ const bookings = require('./controllers/bookings');
 const reviews = require('./controllers/reviews');
 
 const app = express();
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json({ extended: false }));
 app.use(cookieParser());
 
