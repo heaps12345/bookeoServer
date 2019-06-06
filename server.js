@@ -11,7 +11,7 @@ const { check, validationResult } = require('express-validator/check');
 const whitelist = [
   'http://localhost:3000',
   'https://still-castle-84291.herokuapp.com/',
-  'https://elated-jennings-679d2d.netlify.com/',
+  'https://clonebnb.herokuapp.com',
   'https://optimistic-spence-d73e5b.netlify.com'
 ];
 
