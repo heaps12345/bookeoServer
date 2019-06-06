@@ -116,6 +116,6 @@ app.use('/bookings', bookings);
 app.use('/reviews', reviews);
 
 const PORT = process.env.PORT || 5000;
-app.listen(5000, () => {
+app.listen(PORT, () => {
   console.log(`server is running on port ${PORT}`);
 });
