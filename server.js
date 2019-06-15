@@ -29,8 +29,6 @@ const corsOptions = {
   }
 };
 
-
-
 const imageUpload = require('./controllers/imageUpload');
 const users = require('./controllers/users');
 const rentals = require('./controllers/rentals');
@@ -77,48 +75,6 @@ app.get('/', async (req, res) => {
     }
   }
 });
-
-
-// app.get('/profile/:id', async (req, res) => {
-//   const profile = await db('users')
-//     .select('*')
-//     .where({ id: req.params.id });
-
-//   res.json(profile);
-// });
-
-// app.post('/payment', async (req, res) => {
-//   const { token, email, ownerId, amount } = req.body;
-//   const customer = await stripe.customers.create({
-//     source: token,
-//     email: email
-//   });
-//   if (customer) {
-//     const payment = await db('payment')
-//       .insert({
-//         customerEmail: email,
-//         ownerId,
-//         tokenId: token,
-//         amount: amount,
-//         stripeCustomerId: customer.id,
-//         paymentMadeOn: new Date()
-//       })
-//       .returning('*');
-//     res.json(payment);
-//   } else {
-//     res.status(400).json({ errors: [{ param: 'password', msg: 'Invalid Credentials' }] });
-//   }
-
-// });
-
-// app.put('/payment', async (req, res) => {
-//   const { userId } = req.body;
-//   const payment = await db('payment')
-//     .select('amount', 'customerEmail', 'status')
-//     // .join('booking', 'bookingId', '=', 'rentalId')
-//     .where({ ownerId: userId });
-
-//   res.json(payment);
 
 app.use('/imageUpload', imageUpload);
 app.use('/users', users);
