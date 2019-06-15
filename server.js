@@ -7,8 +7,6 @@ const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const multer = require('multer');
 
-const cloudinary = require('cloudinary').v2;
-const Cloud = require('cloudinary-direct');
 const moment = require('moment');
 const { check, validationResult } = require('express-validator/check');
 const whitelist = [
