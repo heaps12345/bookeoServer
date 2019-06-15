@@ -3,13 +3,13 @@ const express = require('express');
 const multer = require('multer');
 const multerS3 = require('multer-s3');
 const config = require('../config');
+const app = express();
 
 aws.config.update({
-  secretAccessKey: config.AWS_SecretAccessKey,
-  accessKeyId: config.AWS_AccessKey,
+  secretAccessKey: config.AWS_SECRET,
+  accessKeyId: config.AWS_KEY,
   region: 'us-east-2'
 });
-
 const s3 = new aws.S3({});
 
 const fileFilter = (req, file, cb) => {

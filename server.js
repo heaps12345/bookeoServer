@@ -5,7 +5,10 @@ const db = require('./config/db');
 const config = require('./config');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
-// const stripe = require('stripe')(config.get('stripeSecretKey'));
+const multer = require('multer');
+
+const cloudinary = require('cloudinary').v2;
+const Cloud = require('cloudinary-direct');
 const moment = require('moment');
 const { check, validationResult } = require('express-validator/check');
 const whitelist = [
@@ -25,6 +28,8 @@ const corsOptions = {
     }
   }
 };
+
+
 
 const imageUpload = require('./controllers/imageUpload');
 const users = require('./controllers/users');
@@ -72,6 +77,7 @@ app.get('/', async (req, res) => {
     }
   }
 });
+
 
 // app.get('/profile/:id', async (req, res) => {
 //   const profile = await db('users')
