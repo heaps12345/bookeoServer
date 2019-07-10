@@ -7,13 +7,12 @@ const cookieParser = require('cookie-parser');
 const multer = require('multer');
 if (process.env.NODE_ENV !== 'production') require('dotenv').config();
 
-
 const moment = require('moment');
 const { check, validationResult } = require('express-validator/check');
 const whitelist = [
   'http://localhost:3000',
   'https://still-castle-84291.herokuapp.com/',
-  
+
   'https://bookeo.herokuapp.com',
   'https://optimistic-spence-d73e5b.netlify.com'
 ];
@@ -84,5 +83,5 @@ app.use('/reviews', reviews);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`server is running on port ${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });
