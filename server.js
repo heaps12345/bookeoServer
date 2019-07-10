@@ -5,7 +5,6 @@ const db = require('./config/db');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const multer = require('multer');
-if (process.env.NODE_ENV !== 'production') require('dotenv').config();
 
 const moment = require('moment');
 const { check, validationResult } = require('express-validator/check');
