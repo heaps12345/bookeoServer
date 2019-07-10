@@ -2,16 +2,18 @@ const express = require('express');
 const bcrypt = require('bcryptjs');
 const cors = require('cors');
 const db = require('./config/db');
-const config = require('./config');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const multer = require('multer');
+if (process.env.NODE_ENV !== 'production') require('dotenv').config();
+
 
 const moment = require('moment');
 const { check, validationResult } = require('express-validator/check');
 const whitelist = [
   'http://localhost:3000',
   'https://still-castle-84291.herokuapp.com/',
+  
   'https://bookeo.herokuapp.com',
   'https://optimistic-spence-d73e5b.netlify.com'
 ];

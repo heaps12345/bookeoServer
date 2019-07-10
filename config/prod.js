@@ -1,4 +1,0 @@
-module.exports = {
-  AWS_SECRET: '+Mz1zRB74rz8jbcxO9XCR4TNs1O3ZfoWuEBGQ0fh',
-  AWS_KEY: 'AKIAJGXLZUCSNRJXR2PA'
-};
