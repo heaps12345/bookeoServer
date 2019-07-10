@@ -5,6 +5,7 @@ const db = require('./config/db');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const multer = require('multer');
+const compression = require('compression');
 
 const moment = require('moment');
 const { check, validationResult } = require('express-validator/check');
@@ -33,6 +34,7 @@ const bookings = require('./controllers/bookings');
 const reviews = require('./controllers/reviews');
 
 const app = express();
+app.use(compression());
 app.use(cors(corsOptions));
 app.use(express.json({ extended: false }));
 app.use(cookieParser());
