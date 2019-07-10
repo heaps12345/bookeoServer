@@ -3,7 +3,7 @@ const express = require('express');
 const multer = require('multer');
 const multerS3 = require('multer-s3');
 const app = express();
-if (process.env.NODE_ENV !== 'production') require('dotenv').config();
+require('dotenv').config();
 
 aws.config.update({
   secretAccessKey: process.env.AWS_SECRET,
